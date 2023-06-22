@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+
+    {% block conteudo %}
+     <!--CORPO-->
+
+     <div class="texto"> <h2>Entre em contato</h2>
+    <p>
+        Preencha o formulário abaixo e entraremos em contato:
+    </p>
+    <hr>
+
+    <form action="/contato/" method="post">
+        <div>
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome"/>
+        </div>
+        <div>
+            <label for="email">Seu email:</label>
+            <input type="email" name="email"/>
+        </div>
+        <div>
+            <label for="assunto">Assunto:</label>
+            <input type="text" name="assunto"/>
+        </div>
+        <div>
+            <label for="descricao">Descrição:</label>
+            <input type="text" name="descricao"/> 
+        </div>
+        <div class="button">
+            <button type="submit">Enviar</button>
+        </div>
+    </form>
+    
+    {% endblock %}

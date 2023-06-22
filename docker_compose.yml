@@ -1,0 +1,20 @@
+version: "3.9"
+services:
+  webserver:
+    build:
+      context: ./flaskServer
+    ports:
+      - "5000:5000"
+    links:
+      - mysql
+    restart: 'always'
+    volumes:
+      - ./flaskServer/webserver:/flaskProject
+  mysql:
+    build: ./mysql
+    restart: 'always'
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: fatec
+      MYSQL_DATABASE: formulario
